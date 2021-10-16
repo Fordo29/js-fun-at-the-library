@@ -4,6 +4,7 @@ function shelfBook(book, sciFiShelf) {
   }
   return book
 }
+
 function unshelfBook(book, shelf) {
   for (var i = 0; i < shelf.length; i++) {
     if (shelf[i].title === book) {
@@ -11,11 +12,25 @@ function unshelfBook(book, shelf) {
     }
   }
 }
-//console.log("kldhjfkl;aihflkdjahlkfjdha", book);
+function listTitles(shelf) {
+  var bookNames = [];
+  for (var i = 0; i < shelf.length; i++){
+    bookNames.push(shelf[i].title);
+  }
+  return bookNames.join(", ");
+}
+
+function searchShelf(shelf, book) {
+  var bookSearch = listTitles(shelf)
+  if (bookSearch.includes(book)) {
+    return true
+  }
+  return false
+}
 
 module.exports = {
   shelfBook,
   unshelfBook,
-  // listTitles,
-  // searchShelf
+  listTitles,
+  searchShelf
 };
