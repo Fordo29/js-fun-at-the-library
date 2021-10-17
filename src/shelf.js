@@ -21,9 +21,12 @@ function listTitles(shelf) {
 }
 
 function searchShelf(shelf, book) {
-  var bookSearch = listTitles(shelf)
-  if (bookSearch.includes(book)) {
+  for (var i = 0; i < shelf.length; i++) {
+  if(shelf[i].title === book) {
+    //bookSearch.includes(book)
+    //
     return true
+  }
   }
   return false
 }
