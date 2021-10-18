@@ -6,9 +6,9 @@ function createLibrary(libraryName) {
         fiction: [],
         nonFiction: [],
     }
-      }
+  }
       return library;
-    }
+}
 
 
 function addBook(libraryName, book) {
@@ -16,11 +16,12 @@ function addBook(libraryName, book) {
   }
 
 function checkoutBook(libraryName, bookTitle, shelf) {
-  for (var i = 0; i < libraryName.shelves[shelf].length; i++) {
-    if (libraryName.shelves[shelf][i].title === bookTitle) {
-      libraryName.shelves[shelf].splice(i, 1)
+  var genreHell = libraryName.shelves[shelf];
+  for (var i = 0; i < genreHell.length; i++) {
+    if (genreHell[i].title === bookTitle) {
+      genreHell.splice(i, 1)
     return `You have now checked out ${bookTitle} from the ${libraryName.name}`
-  }
+    }
   }
   return `Sorry, there are currently no copies of ${bookTitle} available at the ${libraryName.name}`
 }

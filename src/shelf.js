@@ -12,6 +12,7 @@ function unshelfBook(book, shelf) {
     }
   }
 }
+
 function listTitles(shelf) {
   var bookNames = [];
   for (var i = 0; i < shelf.length; i++){
@@ -23,11 +24,9 @@ function listTitles(shelf) {
 function searchShelf(shelf, book) {
   for (var i = 0; i < shelf.length; i++) {
   if(shelf[i].title === book) {
-    //bookSearch.includes(book)
-    //
     return true
   }
-  }
+}
   return false
 }
 

@@ -16,11 +16,11 @@ function saveReview(newReview, reviews) {
     if (reviews[i] === newReview) {
       return reviews
     }
-    }
+  }
     reviews.push(newReview);
     return reviews
-  }
-  //reviews.includes(newReview)
+}
+
 function calculatePageCount(bookTitle) {
   var myArr = bookTitle.split("");
   return myArr.length * 20
